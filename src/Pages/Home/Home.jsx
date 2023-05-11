@@ -6,8 +6,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 export const Home = () => {
 
   const images = [
-    'https://www.csb.co.in/sites/all/themes/csb/edm/KYC-Emailer/images/slide2.gif',
-    'https://www.reliancesmartmoney.com/images/default-source/default-album/blog_image-2a.png?sfvrsn=0'
+    'https://res.cloudinary.com/youverify/image/upload/v1649842681/What_is_KYC_e1419d908f.jpg'
   ];
 
   const responsive = {

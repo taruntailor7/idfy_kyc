@@ -24,7 +24,7 @@ export const Navbars = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Container fluid>
-          <NavLink className='logo' to='/'><img src="https://kycweb.com/wp-content/uploads/2019/05/KYC_logo_n1.png" alt="logo" className='logo' /></NavLink >
+          <NavLink className='logo' to='/'><img src="./hdec_logo.png" alt="logo" className='logo' /></NavLink >
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -37,17 +37,12 @@ export const Navbars = () => {
               <NavLink className='link' to='/'>Deposits</NavLink>
               <NavLink className='link' to='/'>Investors</NavLink>
               <NavLink className='link' to='/'>Contact Us</NavLink>
-              <NavLink className='instant_services' onClick={openModal}>Instant Services</NavLink> 
+              <NavLink className='instant_services' onClick={openModal}>Start your Digital Journey!</NavLink> 
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <button className='search'>Search</button>
-            </Form>
+            <div className="btns">
+              <NavLink to='/signup'><button className='search'>Signup</button></NavLink>
+              <NavLink to='/login'><button className='search'>Login</button></NavLink>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -55,16 +50,16 @@ export const Navbars = () => {
         <div className="modal-container">
           <div className="modal-contents">
             <span className="close-buttons" onClick={closeModal}>&times;</span>
-            <h3>Select your preference</h3>
+            <h3 className='pref'>Select your favorite chat platform</h3>
             <div className='chats'>
               <NavLink to="https://web.whatsapp.com/" onClick={closeModal} target="_blank"><FaWhatsappSquare color='#1bd040' fontSize={50}/></NavLink>
-              <NavLink to="https://t.me/idfykycbot" onClick={closeModal} target="_blank"><BsTelegram color='#30a3d9' fontSize={50}/></NavLink>
+              <NavLink to="https://t.me/hdec_chat_kycbot" onClick={closeModal} target="_blank"><BsTelegram color='#30a3d9' fontSize={50}/></NavLink>
               <NavLink to="https://www.messenger.com/" onClick={closeModal} target="_blank"><BsMessenger color='#0180f7' fontSize={50}/></NavLink>
               <NavLink to="https://signal.org/en/" onClick={closeModal} target="_blank"><BsSignal color='#3872e9' fontSize={50}/></NavLink>
             </div>
             <p className='or'>OR</p>
             <div className='bot'>
-              <p className='or'>Send message to <span className='span'>idfykyc</span> bot on Telegram</p>
+              <p className='or'>Send Hi to <span className='span'>hdec_chat_kyc</span> or <span className='span'>+91 9876543210</span></p>
             </div>
           </div>
         </div>

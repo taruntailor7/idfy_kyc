@@ -1,0 +1,31 @@
+.signup{
+    width: 30%;
+    margin: auto;
+    margin-top: 100px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+}
+.email, .picture{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.OR{
+    text-align: center;
+    margin-top: 20px;
+}
+.submit, .takePicture{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
