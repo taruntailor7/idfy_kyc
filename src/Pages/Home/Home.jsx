@@ -6,7 +6,8 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 export const Home = () => {
 
   const images = [
-    'https://res.cloudinary.com/youverify/image/upload/v1649842681/What_is_KYC_e1419d908f.jpg'
+    'https://res.cloudinary.com/youverify/image/upload/v1649842681/What_is_KYC_e1419d908f.jpg',
+    'https://img.freepik.com/premium-vector/kyc-or-know-your-customer-with-business-verifying-the-identity-of-its-clients-concept-at-the-partners-to-be-through-a-magnifying-glass-vector-illustrator_101179-1619.jpg?w=2000'
   ];
 
   const responsive = {
