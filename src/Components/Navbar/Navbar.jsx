@@ -37,7 +37,7 @@ export const Navbars = () => {
               <NavLink className='link' to='/'>Deposits</NavLink>
               <NavLink className='link' to='/'>Investors</NavLink>
               <NavLink className='link' to='/'>Contact Us</NavLink>
-              <NavLink className='instant_services' onClick={openModal}>Start your Digital Journey!</NavLink> 
+              <NavLink className='instant_services' onClick={openModal}>✨Start your Digital Journey!✨</NavLink> 
             </Nav>
             <div className="btns">
               <NavLink to='/signup'><button className='search'>Signup</button></NavLink>
