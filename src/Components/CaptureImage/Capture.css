@@ -1,0 +1,23 @@
+.camera{
+    margin-top: 100px;
+}
+.register{
+    width: 70%;
+    margin: auto;
+    display: flex!important;
+    justify-content: space-between;
+}
+.btn-danger{
+    margin-top: -90px;
+}
+.webCam {
+    display: grid!important;
+    width: 100%;
+    margin-top: 100px!important;
+}
+.captureBtn {
+    margin-left: 250px;
+    width: 120px;
+    align-self: center;
+    margin-top: 10px
+}

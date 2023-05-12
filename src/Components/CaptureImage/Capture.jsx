@@ -1,52 +1,49 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import Webcam from 'react-webcam';
+import axios from 'axios';
 
-function CameraCapture() {
-  const [stream, setStream] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState(null);
-  const videoRef = React.createRef();
+export const WebcamCapture = () => {
+  const webcamRef = useRef(null);
+  const [image, setImage] = useState(null);
 
-    const openCamera = () => {
-        // Prompt the user to access the camera
-        navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            setStream(true);
-            videoRef.current.srcObject = stream;
-        })
-        .catch(error => {
-            console.error('Could not access camera', error);
-        });
-
-        // Clean up the camera stream when the component unmounts
-        return () => {
-        if (stream) {
-            stream.getTracks().forEach(track => track.stop());
+  const capture = ({uploadImage}) => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImage(imageSrc);
+    
+  };
+  const uploadImage = async (image) => {
+    try {
+      const formData = new FormData();
+      formData.append('image', image);
+  
+      const response = await axios.post('/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
         }
-        };
+      });
+  
+    } catch (error) {
+      console.error(error);
     }
-
-  function capturePhoto() {
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    const width = videoRef.current.videoWidth;
-    const height = videoRef.current.videoHeight;
-    canvas.width = width;
-    canvas.height = height;
-    context.drawImage(videoRef.current, 0, 0, width, height);
-    const photoUrl = canvas.toDataURL();
-    setPreviewUrl(photoUrl);
-  }
-
-  if (!stream) {
-    return <button onClick={openCamera}>Camera</button> ;
-  }
+  };
 
   return (
-    <div>
-      <video ref={videoRef}></video>
-      <button className='takePicture' onClick={capturePhoto}>Take Photo</button>
-      {previewUrl && <img src={previewUrl} alt="Captured photo" />}
+    <div className='webCam'>
+      <Webcam
+        audio={false}
+        ref={webcamRef}
+        screenshotFormat="image/jpeg"
+        required
+      />
+      <button onClick={capture}>Capture photo</button>
+      {image && (
+        <img
+          src={image}
+          alt="captured face"
+          width="300"
+          height="300"
+        />
+      )}
     </div>
   );
-}
-
-export default CameraCapture;
+};

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
@@ -13,7 +11,6 @@ export const Navbars = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
-    console.log('calling modal')
     setShowModal(true);
   };
 
@@ -59,7 +56,7 @@ export const Navbars = () => {
             </div>
             <p className='or'>OR</p>
             <div className='bot'>
-              <p className='or'>Send Hi to <span className='span'>hdec_chat_kyc</span> or <span className='span'>+91 9876543210</span></p>
+              <p className='or'>Send Hi to <span className='span'>ChatVerify</span> or <span className='span'>+91 9876543210</span></p>
             </div>
           </div>
         </div>

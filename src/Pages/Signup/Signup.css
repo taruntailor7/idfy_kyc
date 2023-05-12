@@ -26,6 +26,15 @@
     border-radius: 5px;
     margin-top: 10px;
 }
-
+.cam{
+    display: flex;
+    margin: auto;
+    font-size: 100px;
+}
+.error{
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
 
 
